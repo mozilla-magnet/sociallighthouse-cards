@@ -31,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
   font-family: 'Oxygen', verdana;
+  margin-left: 5px;
 }
 ol, ul {
 	list-style: none;
@@ -81,7 +82,7 @@ body {
 	width: 150px;
 	height: 150px;
 
-	margin-left: 85px;
+	margin-left: 80px;
 	margin-top: -45px;
 
 	background-position: left top;
@@ -98,7 +99,7 @@ body {
 	position: absolute;
 	width: 300px;
 
-	margin-left: 10px;
+	margin-left: 5px;
 
   text-align: center;
 }
