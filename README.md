@@ -5,3 +5,5 @@ Simple web page that uses magnet metadata service to extract information from a 
 You will have two get parameters:
 * twitterHandler: Twitter id.
 * interest: String with the things you would like to talk about.
+
+[Here](https://mozilla-magnet.github.io/sociallighthouse-cards/?twitterHandler=mepartoconmigo&interests=%F0%9F%98%B8,%20metal%20and%20coding) you can find an example.
