@@ -58,7 +58,7 @@ body {
 }
 
 #content {
-	width: 310px;
+	width: 285px;
 	height: 400px;
 
 	background: #fff;
@@ -82,7 +82,7 @@ body {
 	width: 150px;
 	height: 150px;
 
-	margin-left: 80px;
+	margin-left: 65px;
 	margin-top: -45px;
 
 	background-position: left top;
@@ -97,11 +97,11 @@ body {
 
 #content h1, h2 {
 	position: absolute;
-	width: 300px;
-
+	width: 275px;
 	margin-left: 5px;
-
   text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 h1 {
