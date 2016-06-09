@@ -4,7 +4,8 @@
   "description": "Social LightHouse Cards ======================= Simple web page that uses magnet metadata service to extract information from a twitter profile and builds a card with extra information.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
