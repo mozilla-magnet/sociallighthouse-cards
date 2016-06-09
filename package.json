@@ -1,0 +1,23 @@
+{
+  "name": "sociallighthouse-cards",
+  "version": "1.0.0",
+  "description": "Social LightHouse Cards ======================= Simple web page that uses magnet metadata service to extract information from a twitter profile and builds a card with extra information.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mozilla-magnet/sociallighthouse-cards.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mozilla-magnet/sociallighthouse-cards/issues"
+  },
+  "homepage": "https://github.com/mozilla-magnet/sociallighthouse-cards#readme",
+  "dependencies": {
+    "http": "0.0.0",
+    "request": "^2.72.0"
+  }
+}
