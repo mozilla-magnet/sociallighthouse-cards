@@ -35,10 +35,9 @@ function handleRequest(req, res){
         return;
       }
       const data = JSON.parse(body);
-      if (interests.length > 0) {
-
+      if (interests) {
+        data.description = interests;
       } 
-      data.description = interests;
       res.writeHead(200, {'Content-Type': 'application/json'});
       res.end(JSON.stringify(data));
     });
