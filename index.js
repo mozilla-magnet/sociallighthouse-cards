@@ -17,7 +17,8 @@ function handleRequest(req, res){
     twitterId = twitterId.trim();
     interests = decodeURI(interests).trim();
 
-    const jsonRequest = req.headers['accept'].indexOf('json') !== -1;
+    const accept = req.headers['accept'] || '';
+    const jsonRequest = accept.indexOf('json') !== -1;
     if (!jsonRequest) {
       const location = 'https://twitter.com/' + twitterId;
       res.writeHead(301, {'Location': location});
