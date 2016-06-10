@@ -6,33 +6,43 @@ var querystring = require('querystring');
 const PORT=3004;
 
 function handleRequest(req, res){
-    const requestUrl = url.parse(req.url);
-    console.log(req.url);
+  const requestUrl = url.parse(req.url);
+  console.log(req.url);
 
-    const params = querystring.parse(requestUrl.query);
-    var twitterId = params.twitterId;
-    var interests = params.interests;
+  const params = querystring.parse(requestUrl.query);
+  var twitterId = params.twitterId;
+  var interests = params.interests;
 
-    if (twitterId && interests) {
-      twitterId = twitterId.trim();
-      interests = decodeURI(interests).trim();
+  if (twitterId) {
+    twitterId = twitterId.trim();
+    interests = decodeURI(interests).trim();
 
-      const adapterUrl = 'http://box.wilsonpage.me/'
-        + 'magnet-twitter-adaptor?url=https://twitter.com/'
-        + twitterId;
-      request(adapterUrl, (err, r, body) => {
-        if (err) {
-          abort(res);
-          return;
-        }
-        const data = JSON.parse(body);
-        data.description = interests;
-        res.writeHead(200, {'Content-Type': 'application/json'});
-        res.end(JSON.stringify(data));
-      });
-    } else {
-      abort(res);
+    const jsonRequest = req.headers['accept'].indexOf('json') !== -1;
+    if (!jsonRequest) {
+      res.writeHead(301, 'https://twitter.com/' + twitterId);
+      res.end('https://twitter.com/' + twitterId);
+      return;
     }
+
+    const adapterUrl = 'http://box.wilsonpage.me/'
+      + 'magnet-twitter-adaptor?url=https://twitter.com/'
+      + twitterId;
+    request(adapterUrl, (err, r, body) => {
+      if (err) {
+        abort(res);
+        return;
+      }
+      const data = JSON.parse(body);
+      if (interests.length > 0) {
+
+      } 
+      data.description = interests;
+      res.writeHead(200, {'Content-Type': 'application/json'});
+      res.end(JSON.stringify(data));
+    });
+  } else {
+    abort(res);
+  }
 }
 
 function abort(res) {
